@@ -3,7 +3,7 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-    var memo = {0:0,1:1,2:2}
+  var memo = {0:0,1:1,2:2}
   var helper = (x) => {
     if(memo[x] !== undefined) return memo[x]
     return memo[x] = helper(x-1) + helper(x-2)
