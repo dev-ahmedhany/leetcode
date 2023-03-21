@@ -2,18 +2,14 @@
  * @param {number[]} nums
  * @return {number}
  */
-var zeroFilledSubarray = function(nums) {
-    let count = 0, ans = 0;
-        
-    for(let i = 0; i < nums.length; i++)
-    {
-        if(nums[i] == 0){
-            count++;
-        } else {
-            ans += count * (count + 1) / 2;
-            count = 0;
-        }
+const zeroFilledSubarray = nums => {
+    let count = 0;
+    let length = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            length++;
+            count += length;
+        } else length = 0;
     }
-    ans += (count * (count + 1) / 2);
-    return ans; 
+    return count;
 };
