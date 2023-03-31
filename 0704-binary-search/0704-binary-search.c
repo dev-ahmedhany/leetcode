@@ -1,5 +1,6 @@
 int search(int* nums, int numsSize, int target){
     int start = 0, end = numsSize -1, mid;
+
     while (end >= start){
         mid = (end + start) >> 1;
         if(nums[mid] == target){
