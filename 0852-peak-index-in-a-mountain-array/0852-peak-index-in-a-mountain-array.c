@@ -1,17 +1,13 @@
 int peakIndexInMountainArray(int* arr, int arrSize){
-    int start = 1, end = arrSize - 2, mid;
+    int start = 0, end = arrSize - 1, mid;
     
-    while(end >= start){
+    while(start < end){
         mid = start + ((end - start) >> 1);
-        if(arr[mid] > arr[mid - 1]){
-            if(arr[mid] > arr[mid +1]){
-                return mid;
-            } else{
-                start = mid + 1;
-            }
+        if(arr[mid] < arr[mid + 1]){
+            start = mid + 1;
         } else {
-            end = mid - 1;
+            end = mid;
         }
     }
-    return -1;
+    return start;
 }
