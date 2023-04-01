@@ -3,10 +3,12 @@ int peakIndexInMountainArray(int* arr, int arrSize){
     
     while(end >= start){
         mid = start + ((end - start) >> 1);
-        if(arr[mid] > arr[mid - 1] && arr[mid] > arr[mid +1]){
-            return mid;
-        }else if (arr[mid] > arr[mid - 1]){
-            start = mid + 1;
+        if(arr[mid] > arr[mid - 1]){
+            if(arr[mid] > arr[mid +1]){
+                return mid;
+            } else{
+                start = mid + 1;
+            }
         } else {
             end = mid - 1;
         }
