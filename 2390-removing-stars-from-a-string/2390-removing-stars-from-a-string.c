@@ -1,7 +1,8 @@
 char * removeStars(char * s){
     char * stack =(char *) malloc((strlen(s)+1)*sizeof(char));
-    int c =0;
-    for(int i =0; i<strlen(s); i++)
+    int c =0,len= strlen(s);
+    
+    for(int i =0; i<len; i++)
     {
         stack[c]=s[i];
 
