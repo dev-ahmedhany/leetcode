@@ -18,7 +18,7 @@ var solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {        
-        var start = 1, end = n;
+       var start = 1, end = n;
        while(start < end){
            var mid = start + Math.floor((end-start) / 2);
            if(isBadVersion(mid)){
