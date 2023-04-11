@@ -4,12 +4,11 @@ char * removeStars(char * s){
     
     for(int i =0; i<len; i++)
     {
-        stack[c]=s[i];
-
-        if(stack[c]=='*')
-        { 
-           if(c==0){ continue; }
+        if(s[i] == '*'){
+            if(c==0){ continue; }
            else{ c -= 2; }
+        } else {
+            stack[c]=s[i];
         }
         c++;
     }
