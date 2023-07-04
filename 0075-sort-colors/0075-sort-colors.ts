@@ -2,18 +2,25 @@
  Do not return anything, modify nums in-place instead.
  */
 function sortColors(nums: number[]): void {
-    let one=0, zero=0, two=0
-    
-    for(let elem of nums){
-        if(elem == 0) zero++
-        else if ( elem == 1) one ++
+    function swap(i, j) {
+        [nums[i], nums[j]] = [nums[j], nums[i]];
     }
 
-    two = (nums.length) - (zero) - (one) 
+    let l = 0;
+    let r = nums.length - 1;
+    let i = 0;
 
-    nums.length=0
-
-    for(let i=0;i<zero;i++) nums.push(0)
-    for(let i=0;i<one;i++) nums.push(1)
-    for(let i=0;i<two;i++) nums.push(2)    
+    while (i <= r) {
+        const n = nums[i];
+        if (n === 0) {
+            swap(i, l);
+            l++;
+            i++;
+        } else if (n === 2) {
+            swap(i, r);
+            r--;
+        } else {
+            i++;
+        }
+    }
 };
