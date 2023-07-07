@@ -11,7 +11,7 @@ var spiralOrder = function(matrix) {
       let val = m.pop()
       if(typeof val === "number")
         res.push(val)
-        m.reverse()   
+      m.reverse()   
     }
     matrix.reverse()
     }
