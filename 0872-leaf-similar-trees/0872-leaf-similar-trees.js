@@ -13,11 +13,11 @@
  */
 var leafSimilar = function(root1, root2) {
     const leafIterator1 = new LeafIterator(root1);
-        const leafIterator2 = new LeafIterator(root2);
-        while (leafIterator1.hasNext() && leafIterator2.hasNext()) {
-            if (leafIterator1.next() !== leafIterator2.next()) return false;
-        }
-        return !(leafIterator1.hasNext() || leafIterator2.hasNext());
+    const leafIterator2 = new LeafIterator(root2);
+    while (leafIterator1.hasNext() && leafIterator2.hasNext()) {
+        if (leafIterator1.next() !== leafIterator2.next()) return false;
+    }
+    return !(leafIterator1.hasNext() || leafIterator2.hasNext());
 };
 
 class LeafIterator {
