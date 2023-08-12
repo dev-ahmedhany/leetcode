@@ -12,8 +12,7 @@ var nearestExit = function(maze, entrance) {
         if(seen[x+"-"+y]) return
         seen[x+"-"+y] = true
         if(x <0 || y<0 || x>hight || y >width || maze[x][y] === "+")return
-        if(maze[x][y] === "." &&
-           (x === 0 ||y === 0 || x === hight || y=== width) &&
+        if((x === 0 ||y === 0 || x === hight || y=== width) &&
            !(x === entrance[0] && y === entrance[1])){
             return steps
         }
