@@ -13,7 +13,7 @@ var nearestExit = function(maze, entrance) {
         seen[x+"-"+y] = true
         if(x <0 || y<0 || x>hight || y >width || maze[x][y] === "+")return
         if((x === 0 ||y === 0 || x === hight || y=== width) &&
-           !(x === entrance[0] && y === entrance[1])){
+           steps !==0){
             return steps
         }
         queue.push([x+1,y,steps+1])
