@@ -4,7 +4,7 @@
  * @return {number}
  */
 var nearestExit = function(maze, entrance) {
-    const queue = [[...entrance,0]]
+    const queue = new Queue([[...entrance,0]])
     const seen = {}
     const hight = maze.length - 1
     const width = maze[0].length - 1
@@ -21,8 +21,8 @@ var nearestExit = function(maze, entrance) {
         queue.push([x,y+1,steps+1])
         queue.push([x,y-1,steps+1])
     }
-    while(queue.length > 0){
-        const [x,y,steps] = queue.shift();
+    while(queue.size() > 0){
+        const [x,y,steps] = queue.dequeue();
         const res = bfs(x,y,steps)
         if(res) return res
     }
