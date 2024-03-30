@@ -1,0 +1,8 @@
+{
+    "name": "Ahmed Hany leetcode solutions",
+    "theme": "#36B9B9",
+    "sidebar": [
+      ["Home", "/"],
+      ["Another Page", "/another-page"],
+    ]
+  }
